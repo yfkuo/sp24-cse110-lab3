@@ -3,8 +3,10 @@
     color: white;
     font-family: "Arial", sans-serif;
 }
-  
-/* Box Model,   */
+ 
+
+/* Box Model, Combining Two Selectors (element.class)  */
+/* header 1 design */
 div.box {
     background-color: #64eb64;
     margin-top: 4px;
@@ -23,7 +25,7 @@ div.box {
     border-radius: 10px;  
 }
 
-/*  */
+/* header 3 design */
 h3 {
     color: rgb(0, 230, 0);
     background-color: rgba(0, 0, 255, 0.5);
@@ -32,6 +34,7 @@ h3 {
     position: sticky;
     top: 20px;
 }
+
 
 /* lass Selector (.class), display: inline-block */
 .Attend li {
@@ -53,17 +56,19 @@ h3 {
     margin-right: 20px; 
 }
 
-/*   */
+
+/* header 2 setup */
 h2 {
     color: #FF6347;
     background-color: hsl(120, 60%, 70%);
     margin-left: auto;
     margin-right: auto;
-    /* font-size: 18pt; */
     padding: 5px 5px 5px 5px;
 }
 
-/* Descendant Combinator (element element), display: grid, Nested selector */
+
+/* Descendant Combinator (element element), display: grid, Nested selector, position(:hover) */
+/* Meeting Topic section design */
 nav ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -98,12 +103,14 @@ h1, h2 {
     font-family: "Jersey 10", sans-serif;
 }
 
+
 /* Element Selector (element), */
 section {
     font-size: 1.2rem; 
     padding: 1vh; 
     width: 100%;
 }
+
 
 /* Pseudo-class Selector (e.g. p:hover) */
 button:active {
@@ -114,6 +121,7 @@ button:active {
 /* Child Combinator (element > element),
 Class Selector (.class), ID Selector (#id), 
 Class Selector (.class), fallback */
+/* Additional Feedback Activity and last line(contact email section) designs*/
 #feedback > h3 {
     color: rgb(0, 230, 0);
     background-color: rgba(0, 0, 255, 0.5);
@@ -124,21 +132,22 @@ Class Selector (.class), fallback */
     position: static;
 }
 :root {
-    --primary-color: color(display-p3 0.47 0.68 0.50);
+    --primary-color: color(display-p3 0.47 0.68 0.50); /* primary color setup for fallback variable */
 }
 footer > p, .highlight {
     background-color: var(--primary-color, blue); /* Fallback is blue if --primary-color is not available */
 }
-
 /* Attribute Selector (e.g. [attribute=foo]) */
 section[id="feedback"] {
     border: 1px solid color-mix(in srgb, green 50%, yellow 50%);;
 }
 
+
 /* General sibling combinator (element ~ element) */
 label ~ input {
     color: #1eac46;
 }
+
 
 /* Adjacent sibling combinator (element + element) */
 h2 + p {
@@ -148,26 +157,30 @@ h2 + p {
     padding: .5em;
 }
 
-/* :has()  */
+
+/* :has() */
 section:has(video, image) {
-    /* styles to apply if the content contains audio OR video */
+    /* the section contains audio or video do:*/
     height: auto;
     max-width: 100%;
     min-width: 100%;
 }
+
+/* Element Selector (element) */
 img {
     width: 100%;
     height: auto;
     max-width: 480px;
 }
 
-/* display: flex */
+
+/* ID Selector (#id), display: flex */
 #newbusiness ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     padding: 2px;
-    margin: 0;
+    margin: 0 0 0 0;
 }
 #newbusiness li {
     background-color: #484444;
@@ -176,4 +189,26 @@ img {
     border-radius: 4px;
     flex-grow: 4;
     text-align: center;
+}
+
+
+/* Media for better sizing to adapt different scenarios */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+        padding: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 15px;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
