@@ -7,7 +7,20 @@
 /* Box Model,   */
 div.box {
     background-color: #64eb64;
+    margin-top: 4px;
+    margin-right: 1pc;
+    margin-bottom: 20px;
+    margin-left: 1em;
 
+    padding-top: 30px;
+    padding-right: 1px;
+    padding-bottom: 30px;
+    padding-left: 1px;
+
+    border-style: solid;
+    border-width: 10px;
+    border-color: blue;
+    border-radius: 10px;  
 }
 
 /*  */
@@ -15,38 +28,56 @@ h3 {
     color: rgb(0, 230, 0);
     background-color: rgba(0, 0, 255, 0.5);
     font-size: 12pt;
-
+    margin: 10px;
+    position: sticky;
+    top: 20px;
 }
 
 /* lass Selector (.class), display: inline-block */
 .Attend li {
     text-align: left;
     list-style-type: none; /* Removes the bullet points */
-
+    margin: 0;  
+    padding: 0;
+    display: inline-block;
+    margin-right: 20px; 
 }
 
 /* display: inline */
 .Miscellaneous li {
     text-align: left;
     list-style-type: none; /* Removes the bullet points */
-
+    margin: 0;  
+    padding: 0;
+    display: inline;
+    margin-right: 20px; 
 }
 
 /*   */
 h2 {
     color: #FF6347;
     background-color: hsl(120, 60%, 70%);
-
+    margin-left: auto;
+    margin-right: auto;
+    /* font-size: 18pt; */
+    padding: 5px 5px 5px 5px;
 }
 
 /* Descendant Combinator (element element), display: grid, Nested selector */
 nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     background: black;
     text-align: center;
 }
 nav li {
-
+    margin: auto;
     background: lightblue;
+    border-radius: 8px;
 }
 nav a {
     display: inline-block;
@@ -70,7 +101,8 @@ h1, h2 {
 /* Element Selector (element), */
 section {
     font-size: 1.2rem; 
-
+    padding: 1vh; 
+    width: 100%;
 }
 
 /* Pseudo-class Selector (e.g. p:hover) */
@@ -86,8 +118,10 @@ Class Selector (.class), fallback */
     color: rgb(0, 230, 0);
     background-color: rgba(0, 0, 255, 0.5);
     font-size: 20pt;
+    margin: 10px;
     text-decoration: red wavy underline;
     text-align: center;
+    position: static;
 }
 :root {
     --primary-color: color(display-p3 0.47 0.68 0.50);
@@ -96,6 +130,10 @@ footer > p, .highlight {
     background-color: var(--primary-color, blue); /* Fallback is blue if --primary-color is not available */
 }
 
+/* Attribute Selector (e.g. [attribute=foo]) */
+section[id="feedback"] {
+    border: 1px solid color-mix(in srgb, green 50%, yellow 50%);;
+}
 
 /* General sibling combinator (element ~ element) */
 label ~ input {
@@ -107,11 +145,35 @@ h2 + p {
     font-weight: normal;
     background-color: #626361;
     color: #fff;
-
+    padding: .5em;
 }
 
+/* :has()  */
+section:has(video, image) {
+    /* styles to apply if the content contains audio OR video */
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+}
+img {
+    width: 100%;
+    height: auto;
+    max-width: 480px;
+}
+
+/* display: flex */
 #newbusiness ul {
-
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 2px;
+    margin: 0;
 }
-
-
+#newbusiness li {
+    background-color: #484444;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    flex-grow: 4;
+    text-align: center;
+}
