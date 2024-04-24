@@ -1,0 +1,117 @@
+/* Universal Selector (*) */
+* {
+    color: white;
+    font-family: "Arial", sans-serif;
+}
+  
+/* Box Model,   */
+div.box {
+    background-color: #64eb64;
+
+}
+
+/*  */
+h3 {
+    color: rgb(0, 230, 0);
+    background-color: rgba(0, 0, 255, 0.5);
+    font-size: 12pt;
+
+}
+
+/* lass Selector (.class), display: inline-block */
+.Attend li {
+    text-align: left;
+    list-style-type: none; /* Removes the bullet points */
+
+}
+
+/* display: inline */
+.Miscellaneous li {
+    text-align: left;
+    list-style-type: none; /* Removes the bullet points */
+
+}
+
+/*   */
+h2 {
+    color: #FF6347;
+    background-color: hsl(120, 60%, 70%);
+
+}
+
+/* Descendant Combinator (element element), display: grid, Nested selector */
+nav ul {
+    background: black;
+    text-align: center;
+}
+nav li {
+
+    background: lightblue;
+}
+nav a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: green;
+}
+nav a {
+    &:hover {
+        background-color: lightcoral;
+    }
+}
+
+
+/* Selector List (element, element), 3rd party font,  */
+h1, h2 {
+    text-align: center;
+    font-family: "Jersey 10", sans-serif;
+}
+
+/* Element Selector (element), */
+section {
+    font-size: 1.2rem; 
+
+}
+
+/* Pseudo-class Selector (e.g. p:hover) */
+button:active {
+    color: purple;
+}
+
+
+/* Child Combinator (element > element),
+Class Selector (.class), ID Selector (#id), 
+Class Selector (.class), fallback */
+#feedback > h3 {
+    color: rgb(0, 230, 0);
+    background-color: rgba(0, 0, 255, 0.5);
+    font-size: 20pt;
+    text-decoration: red wavy underline;
+    text-align: center;
+}
+:root {
+    --primary-color: color(display-p3 0.47 0.68 0.50);
+}
+footer > p, .highlight {
+    background-color: var(--primary-color, blue); /* Fallback is blue if --primary-color is not available */
+}
+
+
+/* General sibling combinator (element ~ element) */
+label ~ input {
+    color: #1eac46;
+}
+
+/* Adjacent sibling combinator (element + element) */
+h2 + p {
+    font-weight: normal;
+    background-color: #626361;
+    color: #fff;
+
+}
+
+#newbusiness ul {
+
+}
+
+
