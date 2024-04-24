@@ -1,4 +1,4 @@
-# Daily Standup Meeting Note
+# Standup Note Template
 #### Date: DD/MM/YYYY
 #### Meeting Location:
 #### Start Time(~15min):
